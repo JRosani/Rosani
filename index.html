@@ -1,33 +1,1133 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-    <head>
-          <meta charset="UTF-8">
-          <meta name="viewport" 
-          content="width=device-width,
-           initial-scale=1.0">
-          <title>Biologia marinha</title>
-          <style>
-          header{
-            background-color: #69a1dd
-       
-        }
-     </style>
-      </head>
-     <body>
-      </body>
-      </html>
-    <header>
-    <h1>Meu BIOblog</h1>
-    <p>Vou compartilhar conhecimentos sobre biologia marinha</p>
-    </header>
-    <main>
-    <h2>Meu primeiro BIOpost</h2>
-    <style>
-   header{
-    background-color: #62c4b3
-     }
-    </style>
+<html lang="pt-BR">
 
-    <p>Por: Joao vitor rosani</p>
-    <p>Boas-vindas ao meu BIOblog! aqui irei abordar curiosidades sobre a biologia marinha e ecosistema.</p>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>BIOblog | Mundo dos Animais Marinhos</title>
+
+    <style>
+
+        /* =========================
+           CONFIGURAÇÕES GERAIS
+        ========================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: linear-gradient(180deg, #031b3a, #075985, #0ea5e9);
+            color: white;
+            overflow-x: hidden;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        /* =========================
+           BOLHAS DO OCEANO
+        ========================= */
+
+        .bolhas {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .bolha {
+            position: absolute;
+            bottom: -100px;
+            width: 20px;
+            height: 20px;
+            border: 2px solid rgba(255,255,255,0.5);
+            border-radius: 50%;
+            animation: subir 10s infinite ease-in;
+        }
+
+        .bolha:nth-child(1) {
+            left: 10%;
+            animation-delay: 1s;
+        }
+
+        .bolha:nth-child(2) {
+            left: 30%;
+            width: 12px;
+            height: 12px;
+            animation-delay: 4s;
+        }
+
+        .bolha:nth-child(3) {
+            left: 55%;
+            width: 28px;
+            height: 28px;
+            animation-delay: 2s;
+        }
+
+        .bolha:nth-child(4) {
+            left: 80%;
+            width: 15px;
+            height: 15px;
+            animation-delay: 6s;
+        }
+
+        @keyframes subir {
+
+            0% {
+                transform: translateY(0);
+                opacity: 0;
+            }
+
+            20% {
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(-110vh);
+                opacity: 0;
+            }
+        }
+
+        /* =========================
+           MENU
+        ========================= */
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(2, 20, 45, 0.9);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255,255,255,0.15);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: auto;
+            padding: 18px 25px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+            color: #67e8f9;
+        }
+
+        .menu {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+        }
+
+        .menu a {
+            transition: 0.3s;
+        }
+
+        .menu a:hover {
+            color: #67e8f9;
+        }
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+
+            padding: 60px 20px;
+
+            position: relative;
+            z-index: 1;
+
+            background:
+                linear-gradient(rgba(0, 30, 70, 0.45), rgba(0, 80, 120, 0.75));
+        }
+
+        .hero-content {
+            max-width: 900px;
+        }
+
+        .hero h1 {
+            font-size: clamp(45px, 8vw, 90px);
+            margin-bottom: 15px;
+
+            background: linear-gradient(
+                90deg,
+                #67e8f9,
+                #ffffff,
+                #38bdf8
+            );
+
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        .hero p {
+            font-size: 22px;
+            line-height: 1.7;
+            color: #e0f2fe;
+        }
+
+        .emoji-marinho {
+            font-size: 70px;
+            margin-bottom: 20px;
+            animation: nadar 3s infinite ease-in-out;
+        }
+
+        @keyframes nadar {
+
+            0%,100% {
+                transform: translateX(-15px) rotate(-3deg);
+            }
+
+            50% {
+                transform: translateX(15px) rotate(3deg);
+            }
+        }
+
+        .botao {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 15px 28px;
+
+            background: #06b6d4;
+            border-radius: 30px;
+
+            font-weight: bold;
+
+            box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+
+            transition: 0.3s;
+        }
+
+        .botao:hover {
+            transform: translateY(-5px);
+            background: #22d3ee;
+        }
+
+        /* =========================
+           SEÇÕES
+        ========================= */
+
+        section {
+            max-width: 1200px;
+            margin: auto;
+            padding: 90px 25px;
+
+            position: relative;
+            z-index: 1;
+        }
+
+        .titulo {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .titulo h2 {
+            font-size: 42px;
+            color: #67e8f9;
+            margin-bottom: 12px;
+        }
+
+        .titulo p {
+            color: #dbeafe;
+            font-size: 18px;
+        }
+
+        /* =========================
+           CARDS DOS ANIMAIS
+        ========================= */
+
+        .animais {
+            display: grid;
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(280px, 1fr));
+
+            gap: 30px;
+        }
+
+        .card {
+            background: rgba(255,255,255,0.10);
+            border: 1px solid rgba(255,255,255,0.15);
+
+            border-radius: 25px;
+
+            overflow: hidden;
+
+            backdrop-filter: blur(12px);
+
+            box-shadow:
+                0 15px 40px rgba(0,0,0,0.25);
+
+            transition: 0.4s;
+        }
+
+        .card:hover {
+            transform: translateY(-12px) scale(1.02);
+
+            box-shadow:
+                0 25px 60px rgba(0,0,0,0.4);
+        }
+
+        .card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .card-content {
+            padding: 25px;
+        }
+
+        .card h3 {
+            font-size: 27px;
+            color: #67e8f9;
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            color: #e0f2fe;
+            line-height: 1.7;
+        }
+
+        .caracteristicas {
+            margin-top: 20px;
+            padding-left: 20px;
+            color: #dbeafe;
+            line-height: 1.9;
+        }
+
+        /* =========================
+           CURIOSIDADES
+        ========================= */
+
+        .curiosidades {
+            display: grid;
+            grid-template-columns:
+                repeat(auto-fit, minmax(250px, 1fr));
+
+            gap: 25px;
+        }
+
+        .curiosidade {
+            background: linear-gradient(
+                135deg,
+                rgba(14,165,233,0.35),
+                rgba(8,47,73,0.8)
+            );
+
+            padding: 30px;
+
+            border-radius: 20px;
+
+            border-left: 5px solid #22d3ee;
+
+            transition: 0.3s;
+        }
+
+        .curiosidade:hover {
+            transform: translateX(8px);
+        }
+
+        .curiosidade .icone {
+            font-size: 45px;
+            margin-bottom: 15px;
+        }
+
+        .curiosidade h3 {
+            margin-bottom: 10px;
+            color: #a5f3fc;
+        }
+
+        .curiosidade p {
+            line-height: 1.7;
+            color: #e0f2fe;
+        }
+
+        /* =========================
+           BIODIVERSIDADE
+        ========================= */
+
+        .info-oceano {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .info-texto h2 {
+            font-size: 40px;
+            color: #67e8f9;
+            margin-bottom: 20px;
+        }
+
+        .info-texto p {
+            color: #e0f2fe;
+            line-height: 1.9;
+            font-size: 18px;
+        }
+
+        .oceano-visual {
+            min-height: 350px;
+
+            border-radius: 30px;
+
+            background:
+                radial-gradient(circle at 50% 30%,
+                rgba(103,232,249,0.5),
+                transparent 25%),
+                linear-gradient(
+                    180deg,
+                    #38bdf8,
+                    #075985,
+                    #022c22
+                );
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            font-size: 120px;
+
+            box-shadow:
+                inset 0 0 60px rgba(0,0,0,0.3),
+                0 20px 50px rgba(0,0,0,0.25);
+        }
+
+        /* =========================
+           PRESERVAÇÃO
+        ========================= */
+
+        .preservacao {
+            background: rgba(2, 44, 34, 0.65);
+
+            border-radius: 30px;
+
+            padding: 50px;
+
+            text-align: center;
+
+            border: 1px solid rgba(74,222,128,0.3);
+        }
+
+        .preservacao h2 {
+            font-size: 40px;
+            color: #86efac;
+            margin-bottom: 20px;
+        }
+
+        .preservacao p {
+            max-width: 800px;
+            margin: auto;
+
+            color: #dcfce7;
+
+            line-height: 1.8;
+            font-size: 18px;
+        }
+
+        .acoes {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+
+            gap: 15px;
+
+            margin-top: 30px;
+        }
+
+        .acao {
+            background: rgba(34,197,94,0.2);
+            border: 1px solid #4ade80;
+
+            padding: 15px 20px;
+
+            border-radius: 30px;
+        }
+
+        /* =========================
+           RODAPÉ
+        ========================= */
+
+        footer {
+            background: #020617;
+            padding: 40px 20px;
+
+            text-align: center;
+
+            color: #94a3b8;
+
+            position: relative;
+            z-index: 1;
+        }
+
+        footer strong {
+            color: #67e8f9;
+        }
+
+        /* =========================
+           RESPONSIVIDADE
+        ========================= */
+
+        @media (max-width: 700px) {
+
+            .menu {
+                display: none;
+            }
+
+            .hero {
+                min-height: 80vh;
+            }
+
+            .hero p {
+                font-size: 18px;
+            }
+
+            .info-oceano {
+                grid-template-columns: 1fr;
+            }
+
+            .preservacao {
+                padding: 30px 20px;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+    <!-- BOLHAS ANIMADAS -->
+
+    <div class="bolhas">
+
+        <div class="bolha"></div>
+        <div class="bolha"></div>
+        <div class="bolha"></div>
+        <div class="bolha"></div>
+
+    </div>
+
+
+    <!-- MENU -->
+
+    <header>
+
+        <nav>
+
+            <div class="logo">
+                🧬 BIOblog
+            </div>
+
+            <ul class="menu">
+
+                <li>
+                    <a href="#inicio">Início</a>
+                </li>
+
+                <li>
+                    <a href="#animais">Animais</a>
+                </li>
+
+                <li>
+                    <a href="#curiosidades">Curiosidades</a>
+                </li>
+
+                <li>
+                    <a href="#preservacao">Preservação</a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+
+    <!-- CAPA -->
+
+    <main>
+
+        <section class="hero" id="inicio">
+
+            <div class="hero-content">
+
+                <div class="emoji-marinho">
+                    🐋
+                </div>
+
+                <h1>
+                    BIOblog
+                </h1>
+
+                <p>
+                    🌊 O fascinante mundo dos animais marinhos 🌊
+                </p>
+
+                <p>
+                    Descubra características, curiosidades e
+                    informações incríveis sobre alguns dos
+                    habitantes dos oceanos.
+                </p>
+
+                <a class="botao" href="#animais">
+                    🔎 Explorar o oceano
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- ANIMAIS -->
+
+        <section id="animais">
+
+            <div class="titulo">
+
+                <h2>
+                    🐠 Conheça os animais
+                </h2>
+
+                <p>
+                    Cada espécie possui adaptações incríveis
+                    para sobreviver no ambiente marinho.
+                </p>
+
+            </div>
+
+
+            <div class="animais">
+
+
+                <!-- BALEIA -->
+
+                <article class="card">
+
+                    <img
+                        src="img/baleia.jpg"
+                        alt="Baleia no oceano"
+                    >
+
+                    <div class="card-content">
+
+                        <h3>
+                            🐋 Baleia-azul
+                        </h3>
+
+                        <p>
+                            A baleia-azul é considerada o maior
+                            animal conhecido que já existiu.
+                            É um mamífero marinho e precisa subir
+                            à superfície para respirar.
+                        </p>
+
+                        <ul class="caracteristicas">
+
+                            <li>
+                                Pode ultrapassar 30 metros.
+                            </li>
+
+                            <li>
+                                Alimenta-se principalmente de krill.
+                            </li>
+
+                            <li>
+                                Possui uma espessa camada de gordura.
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+                </article>
+
+
+                <!-- TUBARÃO -->
+
+                <article class="card">
+
+                    <img
+                        src="img/tubarao.jpg"
+                        alt="Tubarão nadando"
+                    >
+
+                    <div class="card-content">
+
+                        <h3>
+                            🦈 Tubarão
+                        </h3>
+
+                        <p>
+                            Os tubarões são peixes cartilaginosos
+                            que apresentam diversas adaptações
+                            para a vida no oceano.
+                        </p>
+
+                        <ul class="caracteristicas">
+
+                            <li>
+                                Possuem esqueleto formado por cartilagem.
+                            </li>
+
+                            <li>
+                                Muitas espécies possuem várias fileiras
+                                de dentes.
+                            </li>
+
+                            <li>
+                                Apresentam sentidos muito desenvolvidos.
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+                </article>
+
+
+                <!-- POLVO -->
+
+                <article class="card">
+
+                    <img
+                        src="img/polvo.jpg"
+                        alt="Polvo no fundo do mar"
+                    >
+
+                    <div class="card-content">
+
+                        <h3>
+                            🐙 Polvo
+                        </h3>
+
+                        <p>
+                            Os polvos são moluscos cefalópodes
+                            conhecidos pela inteligência e pela
+                            capacidade de mudar a aparência do corpo.
+                        </p>
+
+                        <ul class="caracteristicas">
+
+                            <li>
+                                Possuem oito braços.
+                            </li>
+
+                            <li>
+                                Podem alterar a coloração da pele.
+                            </li>
+
+                            <li>
+                                Não possuem ossos.
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+                </article>
+
+
+                <!-- TARTARUGA -->
+
+                <article class="card">
+
+                    <img
+                        src="img/tartaruga.jpg"
+                        alt="Tartaruga marinha"
+                    >
+
+                    <div class="card-content">
+
+                        <h3>
+                            🐢 Tartaruga-marinha
+                        </h3>
+
+                        <p>
+                            As tartarugas-marinhas são répteis
+                            adaptados para passar grande parte
+                            da vida no oceano.
+                        </p>
+
+                        <ul class="caracteristicas">
+
+                            <li>
+                                Respiram ar atmosférico.
+                            </li>
+
+                            <li>
+                                Possuem nadadeiras.
+                            </li>
+
+                            <li>
+                                As fêmeas retornam à terra para
+                                colocar seus ovos.
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+                </article>
+
+
+                <!-- GOLFINHO -->
+
+                <article class="card">
+
+                    <img
+                        src="img/golfinho.jpg"
+                        alt="Golfinho nadando no oceano"
+                    >
+
+                    <div class="card-content">
+
+                        <h3>
+                            🐬 Golfinho
+                        </h3>
+
+                        <p>
+                            Golfinhos são mamíferos marinhos
+                            conhecidos por seu comportamento social,
+                            comunicação e capacidade de aprendizagem.
+                        </p>
+
+                        <ul class="caracteristicas">
+
+                            <li>
+                                São mamíferos.
+                            </li>
+
+                            <li>
+                                Respiram através de um espiráculo.
+                            </li>
+
+                            <li>
+                                Algumas espécies utilizam ecolocalização.
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+                </article>
+
+
+                <!-- ÁGUA-VIVA -->
+
+                <article class="card">
+
+                    <img
+                        src="img/agua-viva.jpg"
+                        alt="Água-viva no oceano"
+                    >
+
+                    <div class="card-content">
+
+                        <h3>
+                            🪼 Água-viva
+                        </h3>
+
+                        <p>
+                            As águas-vivas são animais invertebrados
+                            encontrados em diversos ambientes marinhos.
+                            Algumas espécies possuem células
+                            especializadas capazes de liberar toxinas.
+                        </p>
+
+                        <ul class="caracteristicas">
+
+                            <li>
+                                Não possuem esqueleto.
+                            </li>
+
+                            <li>
+                                Possuem corpo gelatinoso.
+                            </li>
+
+                            <li>
+                                Algumas espécies apresentam bioluminescência.
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- CURIOSIDADES -->
+
+        <section id="curiosidades">
+
+            <div class="titulo">
+
+                <h2>
+                    🤯 Você sabia?
+                </h2>
+
+                <p>
+                    Algumas curiosidades incríveis sobre a vida marinha.
+                </p>
+
+            </div>
+
+
+            <div class="curiosidades">
+
+
+                <div class="curiosidade">
+
+                    <div class="icone">
+                        🐋
+                    </div>
+
+                    <h3>
+                        Gigante dos oceanos
+                    </h3>
+
+                    <p>
+                        A baleia-azul pode alcançar aproximadamente
+                        30 metros de comprimento, sendo o maior animal
+                        conhecido que já viveu.
+                    </p>
+
+                </div>
+
+
+                <div class="curiosidade">
+
+                    <div class="icone">
+                        🐙
+                    </div>
+
+                    <h3>
+                        Mestre da camuflagem
+                    </h3>
+
+                    <p>
+                        Algumas espécies de polvo conseguem mudar
+                        a aparência da pele para se misturar ao
+                        ambiente.
+                    </p>
+
+                </div>
+
+
+                <div class="curiosidade">
+
+                    <div class="icone">
+                        🐢
+                    </div>
+
+                    <h3>
+                        Viajantes do oceano
+                    </h3>
+
+                    <p>
+                        Tartarugas-marinhas podem realizar grandes
+                        deslocamentos entre áreas de alimentação
+                        e locais de reprodução.
+                    </p>
+
+                </div>
+
+
+                <div class="curiosidade">
+
+                    <div class="icone">
+                        🐬
+                    </div>
+
+                    <h3>
+                        Comunicação
+                    </h3>
+
+                    <p>
+                        Golfinhos utilizam diferentes sons para
+                        comunicação e algumas espécies utilizam
+                        ecolocalização para localizar objetos e presas.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- BIODIVERSIDADE -->
+
+        <section>
+
+            <div class="info-oceano">
+
+                <div class="info-texto">
+
+                    <h2>
+                        🌊 Por que o oceano é tão importante?
+                    </h2>
+
+                    <p>
+                        Os oceanos abrigam uma enorme diversidade
+                        de organismos, desde pequenos seres
+                        microscópicos até grandes mamíferos.
+                    </p>
+
+                    <br>
+
+                    <p>
+                        Os animais marinhos fazem parte de complexas
+                        cadeias alimentares e dos ecossistemas
+                        oceânicos. Conhecer essa biodiversidade
+                        é um passo importante para ajudar na
+                        conservação dos mares.
+                    </p>
+
+                </div>
+
+
+                <div class="oceano-visual">
+
+                    🐋 🐬 🐢
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- PRESERVAÇÃO -->
+
+        <section id="preservacao">
+
+            <div class="preservacao">
+
+                <h2>
+                    🌱 Proteja os oceanos!
+                </h2>
+
+                <p>
+                    A conservação dos oceanos depende de atitudes
+                    individuais e coletivas. Reduzir a poluição,
+                    diminuir o uso de plástico descartável,
+                    respeitar os animais e preservar seus habitats
+                    são ações importantes.
+                </p>
+
+
+                <div class="acoes">
+
+                    <div class="acao">
+                        ♻️ Reduza o lixo
+                    </div>
+
+                    <div class="acao">
+                        🧴 Evite plástico descartável
+                    </div>
+
+                    <div class="acao">
+                        🌊 Proteja os mares
+                    </div>
+
+                    <div class="acao">
+                        🐢 Respeite os animais
+                    </div>
+
+                    <div class="acao">
+                        🌱 Preserve a natureza
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
     </main>
+
+
+    <!-- RODAPÉ -->
+
+    <footer>
+
+        <p>
+            🌊 <strong>BIOblog</strong> — Mundo dos Animais Marinhos
+        </p>
+
+        <p style="margin-top: 10px;">
+            Projeto escolar de Biologia 🧬
+        </p>
+
+        <p style="margin-top: 15px;">
+            Desenvolvido com HTML, CSS e JavaScript 💙
+        </p>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script>
+
+        // Mensagem no console
+        console.log(
+            "🌊 Bem-vindo ao BIOblog!"
+        );
+
+
+        // Efeito simples nos cards
+        const cards = document.querySelectorAll(".card");
+
+        cards.forEach(card => {
+
+            card.addEventListener("mouseenter", () => {
+
+                card.style.cursor = "pointer";
+
+            });
+
+        });
+
+
+        // Pequena mensagem quando o usuário clica
+        const botao = document.querySelector(".botao");
+
+        botao.addEventListener("click", () => {
+
+            console.log(
+                "🐠 Explorando os animais marinhos..."
+            );
+
+        });
+
+    </script>
+
+</body>
+
+</html>
